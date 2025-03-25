@@ -32,4 +32,20 @@ message(STATUS "BoostRoot = ${BoostRoot}")
 message(STATUS "Boost_INCLUDEDIR = ${Boost_INCLUDEDIR}")
 message(STATUS "Boost_LIBRARYDIR = ${Boost_LIBRARYDIR}")
 
-include(BoostRoot)
+# Standard Boost detection
+find_package(Boost REQUIRED COMPONENTS 
+    system 
+    filesystem 
+    thread 
+    date_time 
+    chrono 
+    regex 
+    serialization 
+    program_options 
+    locale
+)
+
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+    message(STATUS "Boost libraries: ${Boost_LIBRARIES}")
+endif()
