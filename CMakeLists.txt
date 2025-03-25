@@ -29,8 +29,8 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/tools/cmake/include)
 
 # Verify paths before including BoostRoot
 message(STATUS "BoostRoot = ${BoostRoot}")
-message(STATUS "Boost_INCLUDEDIR = ${Boost_INCLUDEDIR}")
-message(STATUS "Boost_LIBRARYDIR = ${Boost_LIBRARYDIR}")
+message(STATUS "BOOST_INCLUDEDIR = ${BOOST_INCLUDEDIR}")
+message(STATUS "BOOST_LIBRARYDIR = ${BOOST_LIBRARYDIR}")
 
 # Standard Boost detection
 find_package(Boost REQUIRED COMPONENTS 
