@@ -10,6 +10,8 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR AND NOT CMAKE_BUILD_TYPE A
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+set(BoostRoot "/home/user/android_boost/armeabi-v7a")
+
 project(Boost VERSION 1.88.0 LANGUAGES CXX)
 
 set(BOOST_SUPERPROJECT_VERSION ${PROJECT_VERSION})
