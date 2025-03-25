@@ -13,12 +13,12 @@ endif()
 # Set BoostRoot and related paths explicitly
 set(BoostRoot "/home/user/android_boost/armeabi-v7a" CACHE PATH "Root directory of Boost installation")
 set(BOOST_ROOT "${BoostRoot}" CACHE PATH "Alternative variable for Boost root directory")
-set(Boost_INCLUDEDIR "${BoostRoot}/include" CACHE PATH "Boost include directory")
-set(Boost_LIBRARYDIR "${BoostRoot}/lib" CACHE PATH "Boost library directory")
+set(BOOST_INCLUDEDIR "${BoostRoot}/include" CACHE PATH "Boost include directory")
+set(BOOST_LIBRARYDIR "${BoostRoot}/lib" CACHE PATH "Boost library directory")
 
 # Ensure these variables are available to subdirectories and find_package
-set(Boost_NO_SYSTEM_PATHS ON) # Prevent CMake from searching system paths
-set(Boost_USE_STATIC_LIBS ON) # Force static linking (common for Android)
+set(BOOST_NO_SYSTEM_PATHS ON) # Prevent CMake from searching system paths
+set(BOOST_USE_STATIC_LIBS ON) # Force static linking (common for Android)
 
 project(Boost VERSION 1.88.0 LANGUAGES CXX)
 
