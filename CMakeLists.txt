@@ -10,7 +10,15 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR AND NOT CMAKE_BUILD_TYPE A
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
-set(BoostRoot "/home/user/android_boost/armeabi-v7a")
+# Set BoostRoot and related paths explicitly
+set(BoostRoot "/home/user/android_boost/armeabi-v7a" CACHE PATH "Root directory of Boost installation")
+set(BOOST_ROOT "${BoostRoot}" CACHE PATH "Alternative variable for Boost root directory")
+set(Boost_INCLUDEDIR "${BoostRoot}/include" CACHE PATH "Boost include directory")
+set(Boost_LIBRARYDIR "${BoostRoot}/lib" CACHE PATH "Boost library directory")
+
+# Ensure these variables are available to subdirectories and find_package
+set(Boost_NO_SYSTEM_PATHS ON) # Prevent CMake from searching system paths
+set(Boost_USE_STATIC_LIBS ON) # Force static linking (common for Android)
 
 project(Boost VERSION 1.88.0 LANGUAGES CXX)
 
@@ -18,5 +26,10 @@ set(BOOST_SUPERPROJECT_VERSION ${PROJECT_VERSION})
 set(BOOST_SUPERPROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR})
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/tools/cmake/include)
+
+# Verify paths before including BoostRoot
+message(STATUS "BoostRoot = ${BoostRoot}")
+message(STATUS "Boost_INCLUDEDIR = ${Boost_INCLUDEDIR}")
+message(STATUS "Boost_LIBRARYDIR = ${Boost_LIBRARYDIR}")
 
 include(BoostRoot)
