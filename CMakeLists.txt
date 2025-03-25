@@ -1,51 +1,57 @@
-# Copyright 2019, 2021 Peter Dimov
-# Distributed under the Boost Software License, Version 1.0.
-# See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt
-
 cmake_minimum_required(VERSION 3.5...3.16)
 
-# The default build type must be set before project()
+# Set build type before project()
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR AND NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
-# Set BoostRoot and related paths explicitly
-set(BoostRoot "/home/user/android_boost/armeabi-v7a" CACHE PATH "Root directory of Boost installation")
-set(BOOST_ROOT "${BoostRoot}" CACHE PATH "Alternative variable for Boost root directory")
-set(BOOST_INCLUDEDIR "${BoostRoot}/include" CACHE PATH "Boost include directory")
-set(BOOST_LIBRARYDIR "${BoostRoot}/lib" CACHE PATH "Boost library directory")
+# Android-specific Boost configuration - using correct BOOST_ prefix
+set(BOOST_ROOT "/home/user/android_boost/armeabi-v7a" CACHE PATH "Boost installation root")
+set(BOOST_INCLUDEDIR "${BOOST_ROOT}/include" CACHE PATH "Boost includes")
+set(BOOST_LIBRARYDIR "${BOOST_ROOT}/lib" CACHE PATH "Boost libraries")
 
-# Ensure these variables are available to subdirectories and find_package
-set(BOOST_NO_SYSTEM_PATHS ON) # Prevent CMake from searching system paths
-set(BOOST_USE_STATIC_LIBS ON) # Force static linking (common for Android)
+# Boost find_package variables - these use mixed case Boost_ prefix
+set(Boost_NO_SYSTEM_PATHS TRUE)
+set(Boost_USE_STATIC_LIBS TRUE)
+set(Boost_USE_STATIC_RUNTIME TRUE)
 
 project(Boost VERSION 1.88.0 LANGUAGES CXX)
 
-set(BOOST_SUPERPROJECT_VERSION ${PROJECT_VERSION})
-set(BOOST_SUPERPROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR})
+# Debug output for verification
+message(STATUS "Boost configuration:")
+message(STATUS "  BOOST_ROOT = ${BOOST_ROOT}")
+message(STATUS "  BOOST_INCLUDEDIR = ${BOOST_INCLUDEDIR}")
+message(STATUS "  BOOST_LIBRARYDIR = ${BOOST_LIBRARYDIR}")
 
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/tools/cmake/include)
-
-# Verify paths before including BoostRoot
-message(STATUS "BoostRoot = ${BoostRoot}")
-message(STATUS "BOOST_INCLUDEDIR = ${BOOST_INCLUDEDIR}")
-message(STATUS "BOOST_LIBRARYDIR = ${BOOST_LIBRARYDIR}")
-
-# Standard Boost detection
-find_package(Boost REQUIRED COMPONENTS 
-    system 
-    filesystem 
-    thread 
-    date_time 
-    chrono 
-    regex 
-    serialization 
-    program_options 
+# Find Boost components
+set(Boost_DEBUG TRUE)  # Enable detailed search logging
+find_package(Boost REQUIRED COMPONENTS
+    system
+    filesystem
+    thread
+    date_time
+    chrono
+    regex
+    serialization
+    program_options
     locale
 )
 
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
+    message(STATUS "Found Boost ${Boost_VERSION} at ${Boost_INCLUDE_DIRS}")
     message(STATUS "Boost libraries: ${Boost_LIBRARIES}")
+else()
+    message(FATAL_ERROR "Boost NOT found. Please verify:"
+        "\n1. The libraries exist in ${BOOST_LIBRARYDIR}"
+        "\n2. The files are named correctly (libboost_*.a)"
+        "\n3. The architecture (armeabi-v7a) matches your toolchain"
+    )
+endif()
+
+# Additional Android-specific settings
+if(ANDROID)
+    add_definitions(-DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC)
+    add_definitions(-DBOOST_UUID_DISABLE_ALIGNMENT)
 endif()
