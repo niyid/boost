@@ -73,8 +73,8 @@
 | <img src="https://avatars.githubusercontent.com/u/2155888?v=4" width="32"/> | [yimyom](https://github.com/yimyom) |
 | <img src="https://avatars.githubusercontent.com/u/2228897?v=4" width="32"/> | [ngedmond](https://github.com/ngedmond) |
 | <img src="https://avatars.githubusercontent.com/u/3131588?v=4" width="32"/> | [DaveDeakins](https://github.com/DaveDeakins) |
-| <img src="https://avatars.githubusercontent.com/u/2888369?v=4" width="32"/> | [hervebronnimann](https://github.com/hervebronnimann) |
 | <img src="https://avatars.githubusercontent.com/u/20237127?v=4" width="32"/> | [niyid](https://github.com/niyid) |
+| <img src="https://avatars.githubusercontent.com/u/2888369?v=4" width="32"/> | [hervebronnimann](https://github.com/hervebronnimann) |
 | <img src="https://avatars.githubusercontent.com/u/19510?v=4" width="32"/> | [christophercurrie](https://github.com/christophercurrie) |
 | <img src="https://avatars.githubusercontent.com/u/7633465?v=4" width="32"/> | [djenkins60](https://github.com/djenkins60) |
 | <img src="https://avatars.githubusercontent.com/u/1106937?v=4" width="32"/> | [asydorchuk](https://github.com/asydorchuk) |
@@ -142,6 +142,7 @@
 | <img src="https://avatars.githubusercontent.com/u/17110489?v=4" width="32"/> | [karzhenkov](https://github.com/karzhenkov) |
 | <img src="https://avatars.githubusercontent.com/u/129721?v=4" width="32"/> | [asomers](https://github.com/asomers) |
 <!-- CONTRIBUTORS END -->
+
 
 
 
