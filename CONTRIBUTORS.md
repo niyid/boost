@@ -28,6 +28,7 @@
 | <img src="https://avatars.githubusercontent.com/u/2762664?v=4" width="32"/> | [rxg](https://github.com/rxg) |
 | <img src="https://avatars.githubusercontent.com/u/3112833?v=4" width="32"/> | [jurko-gospodnetic](https://github.com/jurko-gospodnetic) |
 | <img src="https://avatars.githubusercontent.com/u/721225?v=4" width="32"/> | [viboes](https://github.com/viboes) |
+| <img src="https://avatars.githubusercontent.com/u/4961853?v=4" width="32"/> | [gennaroprota](https://github.com/gennaroprota) |
 | <img src="https://avatars.githubusercontent.com/u/167192?v=4" width="32"/> | [mclow](https://github.com/mclow) |
 | <img src="https://avatars.githubusercontent.com/u/3916357?v=4" width="32"/> | [tschw](https://github.com/tschw) |
 | <img src="https://avatars.githubusercontent.com/u/334849?v=4" width="32"/> | [barendgehrels](https://github.com/barendgehrels) |
@@ -142,6 +143,7 @@
 | <img src="https://avatars.githubusercontent.com/u/17110489?v=4" width="32"/> | [karzhenkov](https://github.com/karzhenkov) |
 | <img src="https://avatars.githubusercontent.com/u/129721?v=4" width="32"/> | [asomers](https://github.com/asomers) |
 <!-- CONTRIBUTORS END -->
+
 
 
 
