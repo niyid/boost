@@ -60,8 +60,8 @@
 | <img src="https://avatars.githubusercontent.com/u/914496?v=4" width="32"/> | [olk](https://github.com/olk) |
 | <img src="https://avatars.githubusercontent.com/u/89226535?v=4" width="32"/> | [simoluk](https://github.com/simoluk) |
 | <img src="https://avatars.githubusercontent.com/u/9340956?v=4" width="32"/> | [adtompkins](https://github.com/adtompkins) |
-| <img src="https://avatars.githubusercontent.com/u/3709434?v=4" width="32"/> | [goerch](https://github.com/goerch) |
 | <img src="https://avatars.githubusercontent.com/u/20237127?v=4" width="32"/> | [niyid](https://github.com/niyid) |
+| <img src="https://avatars.githubusercontent.com/u/3709434?v=4" width="32"/> | [goerch](https://github.com/goerch) |
 | <img src="https://avatars.githubusercontent.com/u/712180?v=4" width="32"/> | [glenfe](https://github.com/glenfe) |
 | <img src="https://avatars.githubusercontent.com/u/274931?v=4" width="32"/> | [aaw](https://github.com/aaw) |
 | <img src="https://avatars.githubusercontent.com/u/449609?v=4" width="32"/> | [AlisdairM](https://github.com/AlisdairM) |
@@ -143,6 +143,7 @@
 | <img src="https://avatars.githubusercontent.com/u/17110489?v=4" width="32"/> | [karzhenkov](https://github.com/karzhenkov) |
 | <img src="https://avatars.githubusercontent.com/u/129721?v=4" width="32"/> | [asomers](https://github.com/asomers) |
 <!-- CONTRIBUTORS END -->
+
 
 
 
